@@ -84,12 +84,12 @@ for classes in novels[novel_id]:
         #print(nums[i],dicts.keys()[nums[i]])
         final[dicts.keys()[nums[i]]]=dicts[dicts.keys()[nums[i]]]
         savename=dicts.keys()[nums[i]]
-        imgfile="/home1/liqian/data/voc2007_2012/VOCdevkit/VOC2007/JPEGImages/"+dicts.keys()[nums[i]]+".jpg"
+        imgfile="/home1/data/data/voc2007_2012/VOCdevkit/VOC2007/JPEGImages/"+dicts.keys()[nums[i]]+".jpg"
         #imgfile="results/demo/"+dicts.keys()[nums[i]]+".jpg"
         print(imgfile)
         img=cv2.imread(imgfile)
-        #savename="/home1/liqian/Fewshot_Detection/plot/atlas_plot/"+splits[2]+"/"+shot_id+"/"+method+"/"+classes+"/"+dicts.keys()[nums[i]]+".jpg"
-        savename="/home1/liqian/Fewshot_Detection/plot/atlas_plot/"+classes+"/"+dicts.keys()[nums[i]]+".jpg"
+        #savename="/home1/data/Fewshot_Detection/plot/atlas_plot/"+splits[2]+"/"+shot_id+"/"+method+"/"+classes+"/"+dicts.keys()[nums[i]]+".jpg"
+        savename="/home1/data/Fewshot_Detection/plot/torch_plot/"+classes+"/"+dicts.keys()[nums[i]]+".jpg"
         plot_box_cv2(img,dicts[dicts.keys()[nums[i]]],classes,cls_id,savename,lens=5)
     cls_id+=1    
     boxes.append(final)
