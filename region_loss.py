@@ -159,15 +159,11 @@ class RegionLossV2(nn.Module):
         self.meta_scale=6
         self.thresh = 0.25
         self.seen = 0
-        self.classification=RankingLossFunc()
+        self.classification=RankingLossFunc()##TCL-C
         #self.weights=weights
         self.weights=[4,4,4,4,4,4,4,4,4,4]
-        self.KLloss=KL_LossFunc(self.weights)
-        self.fegmentLoss=SoftIoULoss(len(cfg.base_classes))
-
-        self.classfication_bce=nn.BCEWithLogitsLoss(size_average=False)
+        self.KLloss=KL_LossFunc(self.weights)####category-based grouping mechanism
         print('class_scale', self.class_scale)
-        self.focal_loss=FocalLoss(len(cfg.base_classes))
 
     def forward(self, output,meta, target,savetrain):
         #output : BxAs*(4+1+num_classes)*H*W
