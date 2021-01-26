@@ -7,17 +7,29 @@ python2 train_meta.py cfg/metayolo.data cfg/darknet_dynamic.cfg cfg/reweighting_
 
 # metayolo.data
 metayolo=1
+
 metain_type=2
+
 data=voc
+
 neg = 1
+
 rand = 0
+
 novel = data/voc_novels.txt
+
 novelid = 2
+
 scale = 1
+
 meta = data/voc_traindict_full.txt
+
 train = /home1/liqian/data/voc/voc_train.txt
+
 valid = /home1/liqian/data/voc/2007_test.txt
+
 backup = coco/ours
+
 gpus=0,1,2,3
 
 
@@ -26,21 +38,37 @@ python2 train_meta.py cfg/metatune_2shot.data cfg/darknet_dynamic.cfg cfg/reweig
 
 # cfg/metatune_2shot.data
 metayolo=1
+
 metain_type=2
+
 data=voc
+
 tuning = 1
+
 neg = 0
+
 rand = 0
+
 novel = data/voc_novels.txt
+
 novelid = 2
+
 max_epoch = 4000
+
 repeat = 200
+
 dynamic = 0
+
 scale=1
+
 train = /home1/liqian/data/voc/voc_train.txt
+
 meta = data/voc_traindict_bbox_2shot.txt
+
 valid = /home1/liqian/data/voc/2007_test.txt
+
 backup = backup/metatunetest1
+
 gpus=0,1,2,3
 
 
